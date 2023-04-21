@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stylesheet/all.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#list-example" data-bs-offset="80">
+    <div class="d-flex">
+        <aside class="sidebar vh-100 border-end d-flex flex-column">
+            <!--後台名稱-->
+            <div class="py-4  px-4 fs-3">
+                <strong>離子水</strong>
+                -後台管理
+            </div>
+            <!--選單-->
+            <div class="overflow-auto fs-5">
+                <a href="/index.html" class="text-decoration-none">
+                    <div class="py-3 px-4 sidebar-link">首頁</div>
+                </a>
+                <a href="#collapseExample" data-bs-toggle="collapse" class="text-decoration-none">
+                    <div class="d-flex justify-content-between py-3 px-4 sidebar-link">
+                        <div>訂單管理</div>
+                        <i class="bi bi-chevron-down"></i>
+                    </div>
+                </a>
+                <div class="collapse border-danger" id="collapseExample">
+                    <a href="/orders.html" class="text-decoration-none">
+                        <div class="py-3 px-5 sidebar-link">訂單列表</div>
+                    </a>
+                    <a href="/order.html" class="text-decoration-none">
+                        <div class="py-3 px-5 sidebar-link">單一訂單細節</div>
+                    </a>
+                </div>
+                <a href="#" class="text-decoration-none">
+                    <div class="py-3  px-4 sidebar-link">參考連結</div>
+                </a>
+            </div>
+            <!--登出按鈕-->
+            <a href="#" class="mt-auto  text-decoration-none fs-5">
+                <div class="py-3  px-4 sidebar-link">登出</div>
+            </a>
+
+        </aside>
+        <main class="main">
+            <div class="border-bottom sticky-top bg-white">
+                <a href="#" class="btn py-3 px-4 border-end" id="toggle-btn"><i
+                        class="bi bi-arrows-angle-expand"></i></a>
+            </div>
+            <div class="p-3">
+                <div class="row">
+                    <div class="col-lg-3 ">
+                        <div class="list-group sticky-top mb-3" style="top:80px;" id="list-example">
+                            <a href="#list1" class="list-group-item list-group-item-action">摘要</a>
+                            <a href="#list2" class="list-group-item list-group-item-action">購買品項</a>
+                            <a href="#list3" class="list-group-item list-group-item-action">發票管理</a>
+                            <a href="#list4" class="list-group-item list-group-item-action">危險操作</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-9 ">
+                        <div class="card mb-3" id="list1">
+                            <div class="card-header bg-primary bg-opacity-25">摘要</div>
+                            <div class="card-body">
+                                <dl class="row">
+                                    <dt class="col-sm-3">訂單編號</dt>
+                                    <dd class="col-sm-9">TX123456789</dd>
+                                    <dt class="col-sm-3">訂單金額</dt>
+                                    <dd class="col-sm-9">1,800</dd>
+                                    <dt class="col-sm-3">訂單</dt>
+                                    <dd class="col-sm-9">待處理</dd>
+                                    <dt class="col-sm-3">發票狀態</dt>
+                                    <dd class="col-sm-9">未開立</dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="card mb-3" id="list2">
+                            <div class="card-header bg-primary bg-opacity-25"">購買品項</div>
+                            <div class=" card-body p-0 table-responsive">
+                                <table class="table table-hover  align-middle mb-0 text-nowrap">
+                                    <thead class="bg-light">
+                                        <tr>
+                                            <th scope="col" class="ps-6">訂單編號</th>
+                                            <th scope="col">Email</th>
+                                            <th scope="col">用戶姓名</th>
+                                            <th scope="col">購買品項</th>
+                                            <th scope="col">付款狀態</th>
+                                            <th scope="col">購買金額</th>
+                                            <th scope="col">編輯</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td scope="row" class="ps-4"><input class="form-check-input me-4"
+                                                    type="checkbox" value="" id="flexCheckDefault">TX123456789</td>
+                                            <td>ab1234@gmail.com</td>
+                                            <td>小明</td>
+                                            <td>離子水</td>
+                                            <td>尚未付款</td>
+                                            <td>500</td>
+                                            <td>
+                                                <div class="btn-group" role="group">
+                                                    <button id="btnGroupDrop1" type="button"
+                                                        class="btn btn-outline-dark  shadow-none"
+                                                        data-bs-toggle="dropdown">
+                                                        編輯<i class="bi bi-pencil ps-2"></i>
+                                                    </button>
+                                                    <button id="btnGroupDrop1" type="button"
+                                                        class="btn btn-outline-dark dropdown-toggle  shadow-none"
+                                                        data-bs-toggle="dropdown">
+                                                        操作
+                                                    </button>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a class="dropdown-item" href="#">修改狀態</a></li>
+                                                        <li><a class="dropdown-item text-danger" href="#" type="button"
+                                                                data-bs-toggle="modal"
+                                                                data-bs-target="#exampleModal">刪除訂單</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td scope="row" class="ps-4"><input class="form-check-input me-4"
+                                                    type="checkbox" value="" id="flexCheckDefault">TX123456788</td>
+                                            <td>sdda546@gmail.com</td>
+                                            <td>忠明</td>
+                                            <td>離子水</td>
+                                            <td>尚未付款</td>
+                                            <td>500</td>
+                                            <td>
+                                                <div class="btn-group" role="group">
+                                                    <button id="btnGroupDrop1" type="button"
+                                                        class="btn btn-outline-dark  shadow-none"
+                                                        data-bs-toggle="dropdown">
+                                                        編輯<i class="bi bi-pencil ps-2"></i>
+                                                    </button>
+                                                    <button id="btnGroupDrop1" type="button"
+                                                        class="btn btn-outline-dark dropdown-toggle  shadow-none"
+                                                        data-bs-toggle="dropdown">
+                                                        操作
+                                                    </button>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a class="dropdown-item" href="#">修改狀態</a></li>
+                                                        <li><a class="dropdown-item text-danger" href="#">刪除訂單</a></li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td scope="row" class="ps-4"><input class="form-check-input me-4"
+                                                    type="checkbox" value="" id="flexCheckDefault">TX123456787</td>
+                                            <td>fsefe454e@gmail.com</td>
+                                            <td>大明</td>
+                                            <td>離子水</td>
+                                            <td>尚未付款</td>
+                                            <td>500</td>
+                                            <td>
+                                                <div class="btn-group" role="group">
+                                                    <button id="btnGroupDrop1" type="button"
+                                                        class="btn btn-outline-dark  shadow-none"
+                                                        data-bs-toggle="dropdown">
+                                                        編輯<i class="bi bi-pencil ps-2"></i>
+                                                    </button>
+                                                    <button id="btnGroupDrop1" type="button"
+                                                        class="btn btn-outline-dark dropdown-toggle  shadow-none"
+                                                        data-bs-toggle="dropdown">
+                                                        操作
+                                                    </button>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a class="dropdown-item" href="#">修改狀態</a></li>
+                                                        <li><a class="dropdown-item text-danger" href="#">刪除訂單</a></li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="card-footer bg-transparent py-3">
+                                <div class="dropdown">
+                                    <a class="btn btn-outline-dark dropdown-toggle" href="#" role="button"
+                                        id="dropdownMenuLink" data-bs-toggle="dropdown">
+                                        出貨狀態管理
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">尚未處理</a></li>
+                                        <li><a class="dropdown-item" href="#">已出貨</a></li>
+                                        <li><a class="dropdown-item" href="#">已取貨</a></li>
+                                        <hr>
+                                        <li><a class="dropdown-item" href="#">刪除品項</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mb-3" id="list3">
+                            <div class="card-header bg-primary bg-opacity-25"">發票管理</div>
+                            <div class=" card-body">
+                                <div class="mb-3 row">
+                                    <label for="staticEmail" class="col-sm-2 col-form-label">發票類型</label>
+                                    <div class="col-sm-10">
+                                        <select class="form-select" id="staticEmail">
+                                            <option selected>營業人三聯式發票</option>
+                                            <option value="1">個人發票</option>
+                                            <option value="2">捐贈發票</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="inputNumber" class="col-sm-2 col-form-label">統一編號</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="inputNumber" placeholder="44223311">
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="inputName" class="col-sm-2 col-form-label">公司名稱</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="inputName" placeholder="離子水">
+                                    </div>
+                                </div>
+                                <div class="card-footer bg-transparent border-0 py-0 d-flex"><a
+                                        class="btn btn-outline-dark  ms-auto" href="#" role="button">更新資訊</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mb-3" id="list4">
+                            <div class="card-header bg-primary bg-opacity-25"">危險操作</div>
+                            <div class=" card-body">
+                                <div class="row">
+                                    <div class="col-3"><a class="btn btn-outline-dark w-100 mb-3" href="#"
+                                            role="button">退款</a>
+                                    </div>
+                                    <div class="col b pt-1">
+                                        退還用戶款項
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-3"><a class="btn btn-outline-dark w-100 mb-3" href="#"
+                                            role="button">折讓</a>
+                                    </div>
+                                    <div class="col  pt-1">
+                                        針對已開立的訂單退回部分款項
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-3"><a class="btn btn-outline-danger w-100 mb-3" href="#"
+                                            role="button">刪除訂單</a>
+                                    </div>
+                                    <div class="col pt-1">
+                                        將訂單刪除，並移除相關訂單資訊
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+    <script src="../javascript/all.js"></script>
+</body>
+
+</html>
