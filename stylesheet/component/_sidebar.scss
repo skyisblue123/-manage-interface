@@ -1,0 +1,66 @@
+$sidebar-width: 280px;
+
+//行動版
+.sidebar {
+    width: $sidebar-width;
+    margin-left: -$sidebar-width; //-280px
+    transition: margin-left .25s;
+    position: fixed; //固定在畫面右方
+
+    .sidebar-link {
+        display: block;
+        color: $dark;
+        border-left: 5px solid transparent;
+    }
+
+    .sidebar-link:hover {
+        background-color: $primary;
+    }
+
+    .sidebar-link:active {
+        border-left: 5px solid $secondary;
+    }
+
+}
+
+.main {
+    width: 100%;
+
+}
+
+//行動版的選單展開
+.sidebar-toggled {
+    .sidebar {
+        margin-left: 0;
+    }
+
+    .main {
+        width: calc(100vw - #{$sidebar-width});
+        margin-left: $sidebar-width;
+    }
+}
+
+
+//桌面板
+@include media-breakpoint-up(lg) {
+    .sidebar {
+        margin-left: 0;
+    }
+
+    .main {
+        width:calc(100vw - #{$sidebar-width}); //減號兩邊要空格
+        margin-left: $sidebar-width;
+    }
+
+    //桌面版的收起選單
+    .sidebar-toggled {
+        .sidebar {
+            margin-left: -$sidebar-width;
+        }
+
+        .main {
+            width: 100%;
+            margin-left: 0;
+        }
+    }
+}
